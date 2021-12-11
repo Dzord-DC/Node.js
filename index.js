@@ -8,14 +8,17 @@ let i =0;
 const colorSelection= (i,arg)=>{
     switch (i%3){
         case 0:
-            return console.log(colors.green(`${arg1}`));
+            return console.log(colors.green(`${arg}`));
         case 1: 
-             return console.log(colors.yellow(`${arg1}`));
+             return console.log(colors.yellow(`${arg}`));
         case 2: 
-             return console.log(colors.red(`${arg1}`));
+             return console.log(colors.red(`${arg}`));
      }
 }
 const searchPrimeNumber = (arg)=>{
+    if (arg<2){
+        return true;
+    }
     for(let j=2;j < arg; ++j ){
         if(arg%j===0){
             return true;
