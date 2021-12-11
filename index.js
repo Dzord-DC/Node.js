@@ -1,6 +1,8 @@
 //console.log(process.argv)
 const args = process.argv.slice(2);
-let [arg1, arg2] = args
+let [arg1, arg2] = args;
+arg1 = +arg1;
+arg2 = +arg2;
 const colors = require('colors');
 let primeNumber = false;
 let i =0;
@@ -27,15 +29,15 @@ const searchPrimeNumber = (arg)=>{
     return false;
 }
 
-if(+arg1 && +arg2){
-    for(arg1; arg1 <= arg2; ++arg1){
-        primeNumber=searchPrimeNumber(arg1);
+if(arg1 && arg2){
+    for(let num = arg1; num <= arg2; num++){
+        primeNumber=searchPrimeNumber(num);
         if(!primeNumber){
-            colorSelection(i,arg1);
+            colorSelection(i,num);
             ++i;
         }
         primeNumber=false;
-}
+    }
 }else{
     console.error(colors.red('не число'));
 }
